@@ -1,6 +1,6 @@
 {
     "name": "vue-penciljs",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Pencil.js ❤️ Vue - Build reactive 2D graphics scene in your Vue project",
     "main": "src/index.js",
     "eslintConfig": {
