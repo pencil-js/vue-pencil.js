@@ -1,0 +1,20 @@
+{
+    "description": "Example of vue-penciljs usage.",
+    "main": "src/index.js",
+    "author": "GMartigny",
+    "scripts": {
+        "dev": "webpack -d --watch",
+        "build": "webpack -p"
+    },
+    "dependencies": {
+        "pencil.js": "^1.16.0",
+        "vue": "^2.6.11",
+        "vue-penciljs": "file:../"
+    },
+    "devDependencies": {
+        "vue-loader": "^15.9.1",
+        "vue-template-compiler": "^2.6.11",
+        "webpack": "^4.42.1",
+        "webpack-cli": "^3.3.11"
+    }
+}

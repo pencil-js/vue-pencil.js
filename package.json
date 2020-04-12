@@ -20,9 +20,7 @@
     },
     "homepage": "https://github.com/pencil-js/vue-penciljs#readme",
     "peerDependencies": {
-        "vue": "^2.6.4"
-    },
-    "dependencies": {
+        "vue": "^2.6.4",
         "pencil.js": "^1.16.0"
     },
     "devDependencies": {

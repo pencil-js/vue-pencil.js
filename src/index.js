@@ -1,4 +1,3 @@
-import Pencil from "pencil.js";
 import Components from "./components";
 
 const install = (Vue) => {
@@ -11,6 +10,5 @@ if (typeof window !== "undefined" && window.Vue) {
 
 export default {
     install,
-    Pencil,
     ...Components,
 };
