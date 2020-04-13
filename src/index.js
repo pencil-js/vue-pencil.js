@@ -1,4 +1,4 @@
-import Components from "./components";
+import * as Components from "./components";
 
 const install = (Vue) => {
     Object.keys(Components).forEach(name => Vue.component(name, Components[name]));
@@ -10,5 +10,5 @@ if (typeof window !== "undefined" && window.Vue) {
 
 export default {
     install,
-    ...Components,
 };
+export * from "./components";
