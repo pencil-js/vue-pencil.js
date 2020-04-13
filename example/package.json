@@ -1,5 +1,5 @@
 {
-    "description": "Example of vue-penciljs usage.",
+    "description": "Example of vue-pencil.js usage.",
     "main": "src/index.js",
     "author": "GMartigny",
     "scripts": {
@@ -9,7 +9,7 @@
     "dependencies": {
         "pencil.js": "^1.16.0",
         "vue": "^2.6.11",
-        "vue-penciljs": "file:../"
+        "vue-pencil.js": "file:../"
     },
     "devDependencies": {
         "vue-loader": "^15.9.1",

@@ -1,25 +1,25 @@
-# vue-penciljs
+# vue-pencil.js
 Pencil.js ❤️ Vue - Build reactive 2D graphics scene in your Vue project
 
 
 ## Install
 
-    npm install vue-penciljs
+    npm install vue-pencil.js
 
-> You need to install [`vue`](https://github.com/vuejs/vue) and [`pencil.js`](https://github.com/pencil-js/pencil.js) yourself alongside `vue-penciljs`.
+> You need to install [`vue`](https://github.com/vuejs/vue) and [`pencil.js`](https://github.com/pencil-js/pencil.js) yourself alongside `vue-pencil.js`.
 
 
 ## Usage
 
 You have 2 choices.
- 1. Install `vue-penciljs` globally and use it wherever you want in your `Vuejs` app.
+ 1. Install `vue-pencil.js` globally and use it wherever you want in your `Vuejs` app.
  2. Or, import only components you need in your `Vuejs` components.
 
 ### 1. Global install
 
 ```js
 import Vue from "vue";
-import Pencil from "vue-penciljs";
+import Pencil from "vue-pencil.js";
 
 Vue.use(Pencil);
 
@@ -43,7 +43,7 @@ new Vue({
 </template>
 
 <script>
-import { PScene, PCircle } from "vue-penciljs";
+import { PScene, PCircle } from "vue-pencil.js";
 
     export default {
         name: "App",

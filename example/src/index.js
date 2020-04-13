@@ -1,5 +1,5 @@
 import Vue from "vue";
-import Pencil from "vue-penciljs";
+import Pencil from "vue-pencil.js";
 import App from "./App.vue";
 
 Vue.use(Pencil);
