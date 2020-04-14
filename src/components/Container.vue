@@ -8,7 +8,6 @@
     import { MouseEvent } from "pencil.js";
 
     export default {
-        name: "PContainer",
         props: ["position", "options"],
         watch: {
             position () {

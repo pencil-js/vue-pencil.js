@@ -2,7 +2,6 @@
     import PContainer from "./p-container.vue";
 
     export default {
-        name: "PComponent",
         extends: PContainer,
         props: ["draggable"],
         mounted () {

@@ -2,11 +2,10 @@ const { writeFile } = require("fs").promises;
 const { promise: clean } = require("delete");
 
 const component = (pencil, props) => `import Pencil from "pencil.js";
-import PComponent from "../p-component.vue";
+import Component from "../Component.vue";
 
 export default {
-    name: "P${pencil}",
-    extends: PComponent,
+    extends: Component,
     props: ${JSON.stringify(props)},
     beforeMount () {
         this.$pencil = new Pencil.${pencil}(this.position, ${props.reduce((str, p) => `${str}this.${p}, `, "")}this.options);
@@ -14,14 +13,15 @@ export default {
 };
 `;
 
-const exporter = list => `${list.map(([classe, file]) => `import P${classe} from "./${file}"`).join(";\n")}
+const exporter = list => `${list.map(([classe, file]) => `import ${classe} from "./${file}"`).join(";\n")}
 
 export {
-${list.map(([classe]) => `    P${classe}`).join(",\n")}
+${list.map(([classe]) => `    ${classe}`).join(",\n")}
 };
 `;
 
 const classes = {
+    // Path: ["instructions", "isClosed"], // FIXME: find a way to declare instructions
     Heart: ["radius"],
     Line: ["points"],
     Spline: ["points", "tension"],
@@ -52,7 +52,7 @@ const targetDir = "./src/components/generated";
 
     const promises = Object.keys(classes).map(async (pencilClass) => {
         const code = component(pencilClass, classes[pencilClass]);
-        const fileName = `p-${pencilClass.toLocaleLowerCase()}.js`;
+        const fileName = `${pencilClass}.js`;
         await writeFile(`${targetDir}/${fileName}`, code);
         return [pencilClass, fileName];
     });

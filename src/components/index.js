@@ -1,10 +1,8 @@
-import PComponent from "./p-component.vue";
-import PContainer from "./p-container.vue";
-import PScene from "./p-scene.vue";
+import Container from "./Container.vue";
+import Scene from "./Scene.vue";
 
 export {
-    PComponent,
-    PContainer,
-    PScene,
+    Container,
+    Scene,
 };
 export * from "./generated";

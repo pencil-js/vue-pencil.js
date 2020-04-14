@@ -21,7 +21,10 @@ You have 2 choices.
 import Vue from "vue";
 import Pencil from "vue-pencil.js";
 
-Vue.use(Pencil);
+const options = {
+    prefix: "p", // Change the component's prefix (default: "p")
+};
+Vue.use(Pencil, options);
 
 new Vue({
     el: "#app",
