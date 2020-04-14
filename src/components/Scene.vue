@@ -1,11 +1,27 @@
 <template>
     <div>
-        <slot></slot>
+        <slot/>
     </div>
 </template>
 
 <script>
     import { MouseEvent, Scene } from "pencil.js";
+
+    const mirroredProps = ["cursorPosition", "fps", "width", "height", "center", "size", "frameCount"];
+    const computed = mirroredProps.reduce((obj, prop) => {
+        obj[prop] = function () {
+            return this.$pencil[prop];
+        };
+        return obj;
+    }, {});
+
+    const mirroredFunction = ["setImageSmoothing", "getRandomPosition", "getImageData", "toImage"];
+    const methods = mirroredFunction.reduce((obj, prop) => {
+        obj[prop] = function (...args) {
+            return this.$pencil[prop](...args);
+        };
+        return obj;
+    }, {});
 
     export default {
         name: "PScene",
@@ -15,6 +31,8 @@
                 this.$pencil.setOptions(this.options);
             }
         },
+        computed,
+        methods,
         beforeMount () {
             // Temporary scene to host children
             const container = document.createElement("div");
@@ -38,15 +56,5 @@
 
             this.$pencil.startLoop();
         },
-        computed: {
-            center () {
-                return this.$pencil.center;
-            }
-        },
-        methods: {
-            getRandomPosition () {
-                return this.$pencil.getRandomPosition();
-            }
-        }
     };
 </script>

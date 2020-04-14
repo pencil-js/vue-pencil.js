@@ -1,6 +1,6 @@
 <template>
     <div>
-        <slot></slot>
+        <slot/>
     </div>
 </template>
 
@@ -15,8 +15,12 @@
                 this.$pencil.position.set(this.position);
             },
             options () {
-                console.log("Set options");
                 this.$pencil.setOptions(this.options);
+            }
+        },
+        computed: {
+            frameCount () {
+                return this.$pencil.frameCount;
             }
         },
         mounted () {
