@@ -11,9 +11,10 @@ Pencil.js ❤️ Vue - Build reactive 2D graphics scene in your Vue project
 
 ## Usage
 
-You have 2 choices.
+You have 3 choices:
  1. Install `vue-pencil.js` globally and use it wherever you want in your `Vuejs` app.
- 2. Or, import only components you need in your `Vuejs` components.
+ 2. Import only components you need in your `Vuejs` components.
+ 3. Use a direct `<script>` tag to include from a CDN.
 
 ### 1. Global install
 
@@ -30,7 +31,7 @@ new Vue({
     el: "#app",
     template: `
         <p-scene>
-            <p-circle :radius="100" />
+            <p-circle :radius="100" :position="[100, 100]" />
         </p-scene>
     `,
 });
@@ -41,7 +42,7 @@ new Vue({
 ```vue
 <template>
     <PScene>
-        <PCircle :radius="100" />
+        <PCircle :radius="100" :position="[100, 100]" />
     </PScene>
 </template>
 
@@ -56,6 +57,35 @@ import { PScene, PCircle } from "vue-pencil.js";
         },
     };
 </script>
+```
+
+### 3. Direct `<script>` tag
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+</head>
+<body>
+    <div id="app"></div>
+    <!-- Vue script tag-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- vue-pencil.js script tag-->
+    <script src="https://unpkg.com/vue-pencil.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            template: `
+                <p-scene>
+                    <p-circle :radius="100" :position="[100, 100]" />
+                </p-scene>
+            `,
+        });
+    </script>
+</body>
+</html>
 ```
 
 

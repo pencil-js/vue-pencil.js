@@ -1,5 +1,5 @@
-import Container from "./Container.vue";
-import Scene from "./Scene.vue";
+import Container from "./Container.js";
+import Scene from "./Scene.js";
 
 export {
     Container,

@@ -3,9 +3,12 @@
     "version": "0.4.0",
     "description": "Pencil.js ❤️ Vue - Build reactive 2D graphics scene in your Vue project",
     "main": "src/index.js",
+    "unpkg": "dist/main.js",
+    "jsdelivr": "dist/main.js",
     "scripts": {
         "build": "node ./build.js",
-        "prepublishOnly": "npm run build"
+        "web": "webpack -p",
+        "prepublishOnly": "npm run build && npm run web"
     },
     "eslintConfig": {
         "extends": "@gmartigny/eslint-config"
@@ -30,6 +33,9 @@
     "devDependencies": {
         "@gmartigny/eslint-config": "^1.4.2",
         "delete": "^1.1.0",
-        "eslint": "^6.8.0"
+        "eslint": "^6.8.0",
+        "pencil.js": "^1.16.0",
+        "webpack": "^4.42.1",
+        "webpack-cli": "^3.3.11"
     }
 }

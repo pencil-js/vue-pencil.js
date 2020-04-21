@@ -2,7 +2,7 @@ const { writeFile } = require("fs").promises;
 const { promise: clean } = require("delete");
 
 const component = (pencil, props) => `import Pencil from "pencil.js";
-import Component from "../Component.vue";
+import Component from "../Component.js";
 
 export default {
     extends: Component,
