@@ -20,7 +20,6 @@ export default ({ Scene }) => ({
     name: "PScene",
     extends: PContainer,
     template: "<div><slot/></div>",
-    props: ["options"],
     watch: {
         options () {
             this.$pencil.setOptions(this.options);
