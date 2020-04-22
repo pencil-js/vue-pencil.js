@@ -1,6 +1,6 @@
 {
     "name": "vue-pencil.js",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "description": "Pencil.js ❤️ Vue - Build reactive 2D graphics scene in your Vue project",
     "main": "src/index.js",
     "unpkg": "dist/main.js",
