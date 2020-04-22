@@ -1,3 +1,5 @@
+![vue-pencil.js logo](media/logo.png)
+
 # vue-pencil.js
 Pencil.js ❤️ Vue - Build reactive 2D graphics scene in your Vue project
 
