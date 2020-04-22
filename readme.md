@@ -49,7 +49,8 @@ new Vue({
 </template>
 
 <script>
-import { PScene, PCircle } from "vue-pencil.js";
+    import { Components } from "vue-pencil.js";
+    const { PScene, PCircle } = Components;
 
     export default {
         name: "App",

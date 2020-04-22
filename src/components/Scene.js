@@ -1,6 +1,6 @@
-import { MouseEvent, Scene } from "pencil.js";
+import PContainer from "./Container";
 
-const mirroredProps = ["cursorPosition", "fps", "width", "height", "center", "size", "frameCount"];
+const mirroredProps = ["cursorPosition", "fps", "width", "height", "center", "size"];
 const computed = mirroredProps.reduce((obj, prop) => {
     obj[prop] = function () {
         return this.$pencil[prop];
@@ -8,15 +8,17 @@ const computed = mirroredProps.reduce((obj, prop) => {
     return obj;
 }, {});
 
-const mirroredFunction = ["setImageSmoothing", "getRandomPosition", "getImageData", "toImage"];
-const methods = mirroredFunction.reduce((obj, prop) => {
+const mirroredFunctions = ["setImageSmoothing", "getRandomPosition", "getImageData", "toImage"];
+const methods = mirroredFunctions.reduce((obj, prop) => {
     obj[prop] = function (...args) {
         return this.$pencil[prop](...args);
     };
     return obj;
 }, {});
 
-export default {
+export default ({ Scene }) => ({
+    name: "PScene",
+    extends: PContainer,
     template: "<div><slot/></div>",
     props: ["options"],
     watch: {
@@ -40,13 +42,8 @@ export default {
         // Transfer children from old to new scene
         oldScene.children.forEach(child => this.$pencil.add(child));
 
-        [
-            ...Object.values(MouseEvent.events),
-            ...Object.values(this.$pencil.constructor.events),
-        ].forEach((event) => {
-            this.$pencil.on(event, (...args) => this.$emit(event, ...args));
-        });
+        this.$listenForEvents();
 
         this.$pencil.startLoop();
     },
-};
+});

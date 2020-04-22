@@ -1,22 +1,22 @@
 const { writeFile } = require("fs").promises;
 const { promise: clean } = require("delete");
 
-const component = (pencil, props) => `import Pencil from "pencil.js";
-import Component from "../Component.js";
+const component = (classe, props) => `import PComponent from "../Component";
 
-export default {
-    extends: Component,
+export default ({ ${classe} }) => ({
+    name: "P${classe}",
+    extends: PComponent,
     props: ${JSON.stringify(props)},
     beforeMount () {
-        this.$pencil = new Pencil.${pencil}(this.position, ${props.reduce((str, p) => `${str}this.${p}, `, "")}this.options);
+        this.$pencil = new ${classe}(${["position", ...props, "options"].map(p => `this.${p}`).join(", ")});
     },
-};
+});
 `;
 
-const exporter = list => `${list.map(([classe, file]) => `import ${classe} from "./${file}"`).join(";\n")}
+const exporter = list => `${list.map((classe) => `import P${classe} from "./${classe}"`).join(";\n")}
 
 export {
-${list.map(([classe]) => `    ${classe}`).join(",\n")}
+${list.map(classe => `    P${classe}`).join(",\n")}
 };
 `;
 
@@ -52,9 +52,8 @@ const targetDir = "./src/components/generated";
 
     const promises = Object.keys(classes).map(async (pencilClass) => {
         const code = component(pencilClass, classes[pencilClass]);
-        const fileName = `${pencilClass}.js`;
-        await writeFile(`${targetDir}/${fileName}`, code);
-        return [pencilClass, fileName];
+        await writeFile(`${targetDir}/${pencilClass}.js`, code);
+        return pencilClass;
     });
 
     Promise.all(promises).then(async (files) => {

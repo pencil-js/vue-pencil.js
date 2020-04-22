@@ -1,8 +1,8 @@
-import Container from "./Container.js";
-import Scene from "./Scene.js";
+import PContainer from "./Container";
+import PScene from "./Scene";
 
 export {
-    Container,
-    Scene,
+    PContainer,
+    PScene,
 };
 export * from "./generated";

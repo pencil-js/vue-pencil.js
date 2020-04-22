@@ -1,6 +1,5 @@
-import { MouseEvent } from "pencil.js";
-
-export default {
+export default ({ MouseEvent }) => ({
+    name: "PContainer",
     template: "<div><slot/></div>",
     props: ["position", "options"],
     watch: {
@@ -21,19 +20,21 @@ export default {
             this.$parent.$pencil.add(this.$pencil);
         }
 
-        [
-            ...Object.values(MouseEvent.events),
-            ...Object.values(this.$pencil.constructor.events),
-        ].forEach((event) => {
-            this.$pencil.on(event, (...args) => this.$emit(event, ...args));
-        });
-    },
-    updated () {
-        console.log("Update", this.$vnode.tag);
+        this.$listenForEvents();
     },
     destroyed () {
         if (this.$parent.$pencil) {
             this.$parent.$pencil.remove(this.$pencil);
         }
     },
-};
+    methods: {
+        $listenForEvents () {
+            [
+                ...Object.values(MouseEvent.events),
+                ...Object.values(this.$pencil.constructor.events),
+            ].forEach((event) => {
+                this.$pencil.on(event, (...args) => this.$emit(event, ...args));
+            });
+        },
+    },
+});
