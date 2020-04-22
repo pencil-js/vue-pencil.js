@@ -1,5 +1,4 @@
 .idea/
 dist/
-example/dist/main.js
 node_modules/
 src/components/generated/

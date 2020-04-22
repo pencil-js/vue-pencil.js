@@ -34,6 +34,6 @@
             for (let i = 0; i < 30; ++i) {
                 this.stars.push(this.$refs.scene.getRandomPosition());
             }
-        }
+        },
     };
 </script>

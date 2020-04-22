@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VuePencil - Example</title>
+</head>
+<body>
+    <div id="app">
+        <p-scene :options="sceneOptions" ref="scene">
+            <p-star
+                v-for="(position, index) in stars" :key="index"
+                :position="position"
+                :radius="100"
+                :options="{
+                    ...starOptions,
+                    rotation: Math.random(),
+                }"
+                draggable
+            />
+        </p-scene>
+    </div>
+    <!-- Vue script tag-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- vue-pencil.js script tag-->
+    <script src="https://unpkg.com/vue-pencil.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            name: "App",
+            data: () => ({
+                sceneOptions: {
+                    fill: "#73e0fa",
+                },
+                starOptions: {
+                    fill: "#fa134f",
+                    shadow: {
+                        position: [5, 5],
+                        blur: 10,
+                        color: "#000",
+                    },
+                },
+                stars: [],
+            }),
+            mounted () {
+                for (let i = 0; i < 30; ++i) {
+                    this.stars.push(this.$refs.scene.getRandomPosition());
+                }
+            },
+        });
+    </script>
+</body>
+</html>
