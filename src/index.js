@@ -3,7 +3,8 @@ import Pencil from "pencil.js";
 import * as ComponentsDefinition from "./components";
 import install from "./install";
 
-const Components = Object.keys(ComponentsDefinition).map(key => ComponentsDefinition[key](Pencil));
+const Components = {};
+Object.keys(ComponentsDefinition).forEach(key => Components[key] = ComponentsDefinition[key](Pencil));
 
 export default {
     install: install(Pencil),
