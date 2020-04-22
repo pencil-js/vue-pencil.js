@@ -3,12 +3,12 @@ const { promise: clean } = require("delete");
 
 const component = (classe, props) => `import PComponent from "../Component";
 
-export default ({ ${classe} }) => ({
+export default (Pencil) => ({
     name: "P${classe}",
-    extends: PComponent,
+    extends: PComponent(Pencil),
     props: ${JSON.stringify(props)},
     beforeMount () {
-        this.$pencil = new ${classe}(${["position", ...props, "options"].map(p => `this.${p}`).join(", ")});
+        this.$pencil = new Pencil.${classe}(${["position", ...props, "options"].map(p => `this.${p}`).join(", ")});
     },
 });
 `;

@@ -1,8 +1,8 @@
 import PContainer from "./Container";
 
-export default () => ({
+export default (Pencil) => ({
     name: "PComponent",
-    extends: PContainer,
+    extends: PContainer(Pencil),
     props: ["draggable"],
     mounted () {
         if (!this.$pencil) {

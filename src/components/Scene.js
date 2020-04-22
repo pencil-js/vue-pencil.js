@@ -16,9 +16,9 @@ const methods = mirroredFunctions.reduce((obj, prop) => {
     return obj;
 }, {});
 
-export default ({ Scene }) => ({
+export default (Pencil) => ({
     name: "PScene",
-    extends: PContainer,
+    extends: PContainer(Pencil),
     template: "<div><slot/></div>",
     watch: {
         options () {
@@ -30,12 +30,12 @@ export default ({ Scene }) => ({
     beforeMount () {
         // Temporary scene to host children
         const container = document.createElement("div");
-        this.$pencil = new Scene(container, this.options);
+        this.$pencil = new Pencil.Scene(container, this.options);
     },
     mounted () {
         const oldScene = this.$pencil;
         const container = this.$el.parentNode;
-        this.$pencil = new Scene(container, this.options);
+        this.$pencil = new Pencil.Scene(container, this.options);
         container.replaceChild(this.$pencil.ctx.canvas, this.$el);
 
         // Transfer children from old to new scene
