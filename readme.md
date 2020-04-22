@@ -96,6 +96,11 @@ import { PScene, PCircle } from "vue-pencil.js";
 Check out a working example in the [example directory](./example) (use [`webpack`](https://github.com/webpack/webpack)).
 
 
+## Contributing
+
+Any contribution abiding to the [code of conduct](https://github.com/pencil-js/.github/blob/master/code_of_conduct.md) is welcome.
+
+
 ## License
 
 [MIT](license)
