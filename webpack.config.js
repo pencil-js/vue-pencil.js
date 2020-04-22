@@ -1,9 +1,5 @@
-const { DefinePlugin } = require("webpack");
+const { resolve } = require("path");
 
 module.exports = {
-    plugins: [
-        new DefinePlugin({
-            WEB: true,
-        }),
-    ],
+    entry: resolve(__dirname, "./src/web.js"),
 };
