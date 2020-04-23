@@ -94,7 +94,7 @@ new Vue({
 
 ## Example
 
-Check out a working example in the [example directory](./example) (use [`webpack`](https://github.com/webpack/webpack)).
+Check out working examples in the [examples directory](./examples).
 
 
 ## Contributing
