@@ -26,6 +26,7 @@
         "url": "https://github.com/pencil-js/vue-pencil.js/issues"
     },
     "homepage": "https://github.com/pencil-js/vue-pencil.js#readme",
+    "funding": "https://github.com/pencil-js/vue-pencil.js?sponsor=1",
     "peerDependencies": {
         "vue": "2.x",
         "pencil.js": "^1.12.0"
