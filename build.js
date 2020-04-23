@@ -4,7 +4,6 @@ const { promise: clean } = require("delete");
 const component = (classe, props) => `import PComponent from "../Component";
 
 export default (Pencil) => ({
-    name: "P${classe}",
     extends: PComponent(Pencil),
     props: ${JSON.stringify(props)},
     beforeMount () {

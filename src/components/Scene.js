@@ -17,7 +17,6 @@ const methods = mirroredFunctions.reduce((obj, prop) => {
 }, {});
 
 export default (Pencil) => ({
-    name: "PScene",
     extends: PContainer(Pencil),
     template: "<div><slot/></div>",
     watch: {

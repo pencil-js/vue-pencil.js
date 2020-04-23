@@ -1,7 +1,6 @@
 import PContainer from "./Container";
 
 export default (Pencil) => ({
-    name: "PComponent",
     extends: PContainer(Pencil),
     props: ["draggable"],
     mounted () {

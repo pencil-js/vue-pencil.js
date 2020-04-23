@@ -1,10 +1,12 @@
 import * as ComponentsDefinition from "./components";
 
-export default pencil => (Vue, { prefix = "p" } = {}) => {
+export default pencil => (Vue, { prefix } = {}) => {
     Object.keys(ComponentsDefinition).forEach((key) => {
-        const component = ComponentsDefinition[key];
-        const name = `${prefix}${key}`;
-        component.name = name;
-        Vue.component(name, component(pencil));
+        const component = ComponentsDefinition[key](pencil);
+        let name = key;
+        if (prefix) {
+            name = name.replace(/^P/, prefix.endsWith("-") ? prefix : `${prefix}-`);
+        }
+        Vue.component(name, component);
     });
 };

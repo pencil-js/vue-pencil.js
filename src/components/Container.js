@@ -1,5 +1,4 @@
 export default ({ MouseEvent }) => ({
-    name: "PContainer",
     template: "<div><slot/></div>",
     props: ["position", "options"],
     watch: {
