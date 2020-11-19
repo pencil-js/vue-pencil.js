@@ -3,6 +3,10 @@
     "version": "1.1.5",
     "description": "Pencil.js ❤️ Vue - Build reactive 2D graphics scene in your Vue project",
     "main": "src/index.js",
+    "files": [
+        "dist",
+        "src"
+    ],
     "unpkg": "dist/main.js",
     "jsdelivr": "dist/main.js",
     "scripts": {
