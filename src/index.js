@@ -1,6 +1,6 @@
 // This should be resolved by the user's bundler
 import Pencil from "pencil.js";
-import * as ComponentsDefinition from "./components";
+import ComponentsDefinition from "./components";
 import install from "./install";
 
 const Components = {};

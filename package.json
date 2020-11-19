@@ -10,9 +10,9 @@
     "unpkg": "dist/main.js",
     "jsdelivr": "dist/main.js",
     "scripts": {
-        "build": "node ./build.js",
-        "web": "webpack -p",
-        "prepublishOnly": "npm run build && npm run web"
+        "dev": "webpack --mode=development --watch",
+        "build": "webpack --mode=production",
+        "prepublishOnly": "npm run build"
     },
     "eslintConfig": {
         "extends": "@gmartigny/eslint-config"

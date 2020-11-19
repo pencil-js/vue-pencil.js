@@ -1,4 +1,4 @@
-import * as ComponentsDefinition from "./components";
+import ComponentsDefinition from "./components";
 
 export default pencil => (Vue, { prefix } = {}) => {
     Object.keys(ComponentsDefinition).forEach((key) => {

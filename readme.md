@@ -74,7 +74,9 @@ new Vue({
 <body>
     <div id="app"></div>
     <!-- Vue script tag-->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <!-- Pencil.js script tag-->
+    <script src="https://unpkg.com/pencil.js"></script>
     <!-- vue-pencil.js script tag-->
     <script src="https://unpkg.com/vue-pencil.js"></script>
     <script>

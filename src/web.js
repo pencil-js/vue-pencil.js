@@ -1,18 +1,21 @@
 import install from "./install";
 
+// eslint-disable-next-line no-restricted-globals
+const global = self;
+
 const errors = [];
-if (!window.Vue) {
+if (!global.Vue) {
     errors.push(`Vue.js should be installed before vue-pencil.js using a <script> tag like:
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>`);
 }
-if (!window.Pencil) {
+if (!global.Pencil) {
     errors.push(`Pencil.js should be installed before vue-pencil.js using a <script> tag like:
-<script src="https://unpkg.com/vue-pencil.js"></script>`);
+<script src="https://unpkg.com/pencil.js"></script>`);
 }
 
 if (errors.length) {
     errors.forEach(message => console.error(message));
 }
 else {
-    install(window.Pencil)(window.Vue);
+    install(global.Pencil)(global.Vue);
 }

@@ -1,6 +1,6 @@
 import PContainer from "./Container";
 
-export default (Pencil) => ({
+export default Pencil => ({
     extends: PContainer(Pencil),
     props: ["draggable"],
     mounted () {
