@@ -30,16 +30,18 @@
         "url": "https://github.com/pencil-js/vue-pencil.js/issues"
     },
     "homepage": "https://github.com/pencil-js/vue-pencil.js#readme",
-    "funding": "https://github.com/pencil-js/vue-pencil.js?sponsor=1",
+    "funding": {
+        "url": "https://github.com/pencil-js/vue-pencil.js?sponsor=1"
+    },
     "peerDependencies": {
-        "vue": "2.x",
-        "pencil.js": "^1.12.0"
+        "pencil.js": ">=1.12.0",
+        "vue": ">=2.0.0"
     },
     "devDependencies": {
-        "@gmartigny/eslint-config": "^1.4.2",
+        "@gmartigny/eslint-config": "^1.6.0",
         "delete": "^1.1.0",
-        "eslint": "^6.8.0",
-        "webpack": "^4.42.1",
-        "webpack-cli": "^3.3.11"
+        "eslint": "^7.13.0",
+        "webpack": "^5.4.0",
+        "webpack-cli": "^4.2.0"
     }
 }
