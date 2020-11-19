@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>VuePencil - Example</title>
+    <style>
+        html, body, #app {
+            margin: 0;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -19,9 +25,11 @@
             />
         </p-scene>
     </div>
-    <!-- Vue script tag-->
+    <!-- Vue script tag -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <!-- vue-pencil.js script tag-->
+    <!-- Pencil.js script tag -->
+    <script src="https://unpkg.com/pencil.js"></script>
+    <!-- vue-pencil.js script tag -->
     <script src="https://unpkg.com/vue-pencil.js"></script>
     <script>
         new Vue({
